@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+   <p>Angiv længden på din flyrejse i timer</p>
+   <input type="text" id="timer">
+    <button>
+        Klik og beregn din CO2-udledning, kig i konsollen
+    </button>
+   
+    <script>
+         document.querySelector("button").addEventListener("click", buttonClicked);
+        
+         function buttonClicked() {
+        let timer = 
+            document.querySelector("#timer").value;;
+        let co2UdledtIKiloVedFlyrejse = timer * 109;
+         let tekst ;
+            let resultat = `Du har fløjet ${timer} timer og udledt ${co2UdledtIKiloVedFlyrejse} kg CO2 ${tekst}`;
+            
+             
+        if (isNaN(co2UdledtIKiloVedFlyrejse)) {
+            tekst = "Det er ikke et tal, prøv igen";
+             
+        }     
+
+         else if (co2UdledtIKiloVedFlyrejse < 100) {
+            tekst = "Tæt på Thunberg ";
+             
+
+        } else if (co2UdledtIKiloVedFlyrejse > 99 && co2UdledtIKiloVedFlyrejse
+            < 200) {
+
+            tekst = "Jaja, du behøver ikke at melde dig ud a Å!";
+             
+
+        } else if (co2UdledtIKiloVedFlyrejse > 199 && co2UdledtIKiloVedFlyrejse < 600) {
+
+            tekst = "Det er godt for turismen i nordeuropa.";
+        }
+
+       
+             
+             
+         
+        console.log(resultat);
+         }
+             
+            
+
+         
+
+
+        //        let resultat = `Længden er ${længde} meter og bredden er ${bredde} meter. Arealet er ${areal}`;
+
+    </script>
+</body>
+
+</html>
