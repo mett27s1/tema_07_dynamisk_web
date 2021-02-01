@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script>
+        let timer = 3;
+        let co2UdledtIKiloVedFlyrejse = timer * 109;
+
+        let tekst;
+
+
+        if (co2UdledtIKiloVedFlyrejse < 100) {
+            tekst = "Tæt på Thunberg ";
+
+        } else if (co2UdledtIKiloVedFlyrejse > 99 && co2UdledtIKiloVedFlyrejse
+            < 200) {
+
+            tekst = "Jaja, du behøver ikke at melde dig ud a Å!";
+
+        } else if (co2UdledtIKiloVedFlyrejse > 199 && co2UdledtIKiloVedFlyrejse < 600) {
+
+            tekst = "Det er godt for turismen i nordeuropa.";
+        }
+
+        let resultat = `Du har fløjet ${timer} timer og udledt ${co2UdledtIKiloVedFlyrejse} kg CO2 ${tekst}`;
+
+
+
+        console.log(resultat);
+
+
+
+
+        //        let resultat = `Længden er ${længde} meter og bredden er ${bredde} meter. Arealet er ${areal}`;
+
+    </script>
+</body>
+
+</html>
