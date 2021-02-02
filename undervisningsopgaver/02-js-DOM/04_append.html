@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="html_struktur.css">
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+
+            <article>
+                <!--             <img src="maane.jpg" alt="måne">-->
+                <img src="https://placeimg.com/400/300/any" alt="" class="first">
+                <h3>article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+            </article>
+            <article>
+                <!--             <img src="sten.jpg" alt="sten">-->
+                <img src="https://placeimg.com/400/300/any" alt="" class="second">
+                <h3>article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+            </article>
+        </section>
+
+    </main>
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+
+    <script>
+        const pic1 = document.querySelector("article:nth-child(1) img");
+        console.log(pic1);
+        pic1.src = "maane.jpg";
+        pic1.alt = "en måne";
+
+        const pic2 = document.querySelector("article:nth-child(2) img");
+        console.log(pic2);
+        pic2.src = "sten.jpg";
+        pic2.alt = "en sten";
+
+
+        let mainSection = document.querySelector("section");
+        //nyt article element
+        let newArticle = document.createElement("article");
+        //nyt H# element
+        let overskrift = document.createElement("h3");
+        // tekst til overskriften
+        let overskriftText = document.createTextNode("article 3");
+        //nyt tekst element
+        let nyTekst = document.createElement("p");
+        //tekst til nyt tekst element
+        let nyTekstTekst = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.");
+
+
+        //nyt billede element
+        let nytBillede = document.createElement("img");
+        //selve billedet
+        nytBillede.innerHTML = "<img src="maane.jpg" alt="">";
+         newArticle.appendChild(nytBillede);
+
+        nytBillede.appendChild();
+        //indsæt tekst i overskrift
+        overskrift.appendChild(overskriftText);
+        //tilføj overskrift til article
+        newArticle.appendChild(overskrift);
+        //indsæt tekst til article
+        newArticle.appendChild(nyTekst);
+
+        //indsæt tekst i nytekst
+        nyTekst.appendChild(nyTekstTekst);
+        //tilføj article til section
+        mainSection.appendChild(newArticle);
+
+    </script>
+</body>
+
+</html>
