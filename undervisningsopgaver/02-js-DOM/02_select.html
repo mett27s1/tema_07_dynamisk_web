@@ -48,6 +48,22 @@
         console.log(pic1);
         pic1.alt = "billede af noget";
 
+        const undertitel = document.querySelector("h2");
+        console.log(undertitel);
+        undertitel.textContent = "Billedgalleri";
+
+        const article1 = document.querySelector("article:first-child h3");
+        console.log(article1);
+        article1.textContent = "første h3'er";
+
+        const article2 = document.querySelector("article:nth-child(2) h3");
+        console.log(article2);
+        article2.textContent = "anden h3'er";
+
+        const footer = document.querySelector("footer");
+        console.log(footer);
+        footer.innerHTML = "<h2>ny footer</h2>"
+
     </script>
 </body>
 </html>

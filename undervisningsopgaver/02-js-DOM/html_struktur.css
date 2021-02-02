@@ -6,6 +6,8 @@ section {
     grid-column-gap: 10px;
     padding-left:10vw;
     padding-right:10vw;
+/*    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));*/
+
 }
 
 h2 {
@@ -13,9 +15,7 @@ h2 {
 }
 
 header {
-        display: grid;
-    justify-content: center;
-    align-content: center;
+       text-align: center;
 
 }
 
@@ -33,15 +33,7 @@ img {
 }
 
 footer {
-       display: grid;
-    justify-content: center;
-    align-content: center;
-    position: fixed;
-    height: 1.5em;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.8em;
+ text-align: center;
     background-color: white;
 
 }
