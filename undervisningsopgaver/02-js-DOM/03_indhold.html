@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="html_struktur.css">
+</head>
+
+<body>
+  <header>
+      <h1>Titel</h1>
+  </header>
+
+   <main>
+     <h2>Undertitel</h2>
+      <section>
+
+          <article>
+<!--             <img src="maane.jpg" alt="måne">-->
+              <img src="https://placeimg.com/400/300/any" alt="" class="first">
+              <h3>article 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+          </article>
+          <article>
+<!--             <img src="sten.jpg" alt="sten">-->
+              <img src="https://placeimg.com/400/300/any" alt="" class="second">
+              <h3>article 2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+          </article>
+      </section>
+
+   </main>
+   <footer>
+       <p>This is the footer</p>
+   </footer>
+
+
+    <script>
+        const titel = document.querySelector("header");
+        //textContent rent uformateret indhold man sætter ind
+        titel.textContent += "Billedgalleri";
+        titel.setAttribute ("class", "randomclass");
+        console.log("hearder" +titel.textContent);
+
+        //innerHTML her har man mulighed for at indsætte html-tags/DOM
+//        titel.innerHTML = "<h1>Billeder</h1>"
+
+
+
+        const undertitel = document.querySelector("h2");
+        console.log(undertitel);
+        undertitel.innerHTML = "<h1>Billedgalleri</h1>";
+
+        const article1 = document.querySelector("article:first-child h3");
+        console.log(article1);
+        article1.textContent = "første h3'er";
+
+        const article2 = document.querySelector("article:nth-child(2) h3");
+        console.log(article2);
+        article2.textContent = "anden h3'er";
+
+        const tekst = document.querySelector("article:nth-child(2) p");
+         console.log(tekst);
+        tekst.innerHTML += "<b>hej</b>";
+
+        const footer = document.querySelector("footer");
+        console.log(footer);
+        footer.innerHTML = "<h2>ny footer</h2>"
+
+
+        const pic1 = document.querySelector("article:nth-child(1) img");
+        console.log(pic1);
+        pic1.src = "maane.jpg";
+        pic1.alt = "en måne";
+
+        const pic2 = document.querySelector("article:nth-child(2) img");
+        console.log(pic2);
+        pic2.src = "sten.jpg";
+        pic2.alt = "en sten";
+
+
+    </script>
+</body>
+</html>
