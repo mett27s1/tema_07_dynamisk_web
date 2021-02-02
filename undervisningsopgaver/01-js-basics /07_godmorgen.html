@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body >
+    <script>
+        
+           var d = new Date();
+            var n = d.getHours();
+            let besked ;
+            
+            if (n >4 && n <10){
+                besked = "Godmorgen";
+            }
+            else if (n > 9 && n <18){
+                 besked = "Goddag";
+            }
+             else if (n >17 && n <24){
+                 besked = "Godaften";
+            }
+            else if (n >23 && n <5){
+                 besked = "Godnat";
+            }
+            
+            console.log(besked);
+        
+        
+    </script>
+</body>
+</html>
