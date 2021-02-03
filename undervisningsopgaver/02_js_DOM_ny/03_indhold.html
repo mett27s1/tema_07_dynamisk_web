@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: 46px;
+            grid-column-gap: 10px;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            /*    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));*/
+
+        }
+
+        h2 {
+            padding-left: 10vw;
+        }
+
+        header {
+            text-align: center;
+
+        }
+
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+
+        @media only screen and (max-width: 800px) {
+            section {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            text-align: center;
+            background-color: white;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+
+            <article>
+                <!--             <img src="maane.jpg" alt="måne">-->
+                <img src="https://placeimg.com/400/300/any" alt="" class="first">
+                <h3>article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+            </article>
+            <article>
+                <!--             <img src="sten.jpg" alt="sten">-->
+                <img src="https://placeimg.com/400/300/any" alt="" class="second">
+                <h3>article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+            </article>
+        </section>
+
+    </main>
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+
+    <script>
+        const overskrift = document.querySelector("h1");
+        //console.log(overskrift.textContent); //den consolelogger Titel ud --> textContent
+        console.log(overskrift); //den consolelogger h1 ud --> fordi den refererer til --> const overskrift = document.querySelector("h1");
+        overskrift.textContent = "Mega fed overskrift";
+
+        const undertitel = document.querySelector("h2");
+        console.log(undertitel);
+        undertitel.textContent = "Mega fed undertitel";
+
+        const article1 = document.querySelector("article:nth-child(1)");
+        console.log(article1);
+        article1.textContent;
+
+        const billede1 = document.querySelector("article:nth-child(1) img");
+        console.log(billede1);
+          //rediger attributter
+        billede1.src = "fugl.jpg";
+        billede1.alt = "her er en fugl";
+
+
+
+        const h3_1 = document.querySelector("article:nth-child(1) h3");
+        console.log(h3_1);
+        h3_1.textContent = "Mega fed ny h3'er til article 1";
+
+        const tekst1 = document.querySelector("article:nth-child(1) p");
+        console.log(tekst1);
+        tekst1.innerHTML = "Mega <b>fed</b> længere tekst 1, hvor jeg har brugt <b>innerHTML</b>, som bliver opfattet og derfor formateret som html";
+
+
+
+        const article2 = document.querySelector("article:nth-child(2)");
+        console.log(article2);
+        article2.textContent;
+
+        const billede2 = document.querySelector("article:nth-child(2) img");
+        console.log(billede2);
+        billede2.textContent;
+          //rediger attributter
+        billede2.src = "klipper.jpg";
+        billede2.alt = "her er nogle klipper";
+
+        const h3_2 = document.querySelector("article:nth-child(2) h3");
+        console.log(h3_2);
+        h3_2.textContent = "Mega fed ny h3'er til article 2";
+
+        const tekst2 = document.querySelector("article:nth-child(2) p");
+        console.log(tekst2);
+        tekst2.textContent = "Mega <b>fed</b> længere tekst 2, hvor jeg har brugt textContent, så hele min tekst bliver opfattet som en tekststreng";
+
+    </script>
+</body>
+
+</html>
