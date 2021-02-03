@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bokse</title>
+    <style>
+        .boks {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            margin: 10px;
+        }
+
+        .aktiv {
+            background-color: darkcyan;
+        }
+
+        h1 {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+   <h1>BOKSE</h1>
+
+   <div class="boks"></div>
+   <div class="boks"></div>
+   <div class="boks"></div>
+
+
+    <script>
+
+        const alleBokse = document.querySelectorAll(".boks");
+        alleBokse.forEach(boks =>boks.addEventListener("click", aktiver))
+
+        function aktiver() {
+            console.log(this);
+            //referer til boksene, der bliver klikket på
+            this.classList.toggle("aktiv");
+        }
+
+    </script>
+</body>
+</html>
