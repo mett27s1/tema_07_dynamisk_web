@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="html_struktur.css">
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+
+            <article>
+                <!--             <img src="maane.jpg" alt="måne">-->
+                <img src="https://placeimg.com/400/300/any" alt="" class="first">
+                <h3>article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+            </article>
+            <article>
+                <!--             <img src="sten.jpg" alt="sten">-->
+                <img src="https://placeimg.com/400/300/any" alt="" class="second">
+                <h3>article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+            </article>
+        </section>
+
+    </main>
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+
+    <script>
+        let element = document.querySelector("article:nth-child(1) img");
+
+        element.addEventListener("click", skiftBillede);
+
+        function skiftBillede() {
+            console.log("event er tilføjet");
+
+            const tilfaeldigtTal = Math.round(Math.random() * 10);
+
+
+            const pic1 = ("article:nth-child(1) img");
+            pic1.src = "https://placeimg.com/400/300/arch?t=" + tilfaeldigtTal;
+        }
+
+    </script>
+</body>
+
+</html>
