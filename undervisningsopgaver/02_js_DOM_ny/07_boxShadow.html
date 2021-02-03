@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: 46px;
+            grid-column-gap: 10px;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            /*    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));*/
+
+        }
+
+        h2 {
+            padding-left: 10vw;
+        }
+
+        header {
+            text-align: center;
+
+        }
+
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+
+        @media only screen and (max-width: 800px) {
+            section {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            text-align: center;
+            background-color: white;
+
+        }
+
+        .boksshadow {
+            box-shadow: 11px 15px 16px 7px rgba(24,68,102,0.53);
+            transition-duration: 2s;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+
+            <article>
+                <!--             <img src="maane.jpg" alt="måne">-->
+                <img src="https://placeimg.com/400/300/any" alt="" class="first">
+                <h3>article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+            </article>
+            <article>
+                <!--             <img src="sten.jpg" alt="sten">-->
+                <img src="https://placeimg.com/400/300/any" alt="" class="second">
+                <h3>article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis amet veritatis quo nostrum ipsum suscipit excepturi repellat aliquid sint voluptate omnis qui vero fugit, asperiores cum doloribus, nulla ullam. Temporibus.</p>
+            </article>
+        </section>
+
+    </main>
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loadet");
+        }
+
+        const overskrift = document.querySelector("h1");
+        //console.log(overskrift.textContent); //den consolelogger Titel ud --> textContent
+        console.log(overskrift); //den consolelogger h1 ud --> fordi den refererer til --> const overskrift = document.querySelector("h1");
+        overskrift.textContent = "Mega fed overskrift2";
+
+        const undertitel = document.querySelector("h2");
+        console.log(undertitel);
+        undertitel.textContent = "Mega fed undertitel";
+
+        const article1 = document.querySelector("article:nth-child(1)");
+        console.log(article1);
+        article1.textContent;
+
+        const billede1 = document.querySelector("article:nth-child(1) img");
+        console.log(billede1);
+        //rediger attributter
+        billede1.src = "fugl.jpg";
+        billede1.alt = "her er en fugl";
+
+
+
+        const h3_1 = document.querySelector("article:nth-child(1) h3");
+        console.log(h3_1);
+        h3_1.textContent = "Mega fed ny h3'er til article 1";
+
+        const tekst1 = document.querySelector("article:nth-child(1) p");
+        console.log(tekst1);
+        tekst1.innerHTML = "Mega <b>fed</b> længere tekst 1, hvor jeg har brugt <b>innerHTML</b>, som bliver opfattet og derfor formateret som html";
+
+
+
+        const article2 = document.querySelector("article:nth-child(2)");
+        console.log(article2);
+        article2.textContent;
+
+        const billede2 = document.querySelector("article:nth-child(2) img");
+        console.log(billede2);
+        billede2.textContent;
+        //rediger attributter
+        billede2.src = "klipper.jpg";
+        billede2.alt = "her er nogle klipper";
+
+        const h3_2 = document.querySelector("article:nth-child(2) h3");
+        console.log(h3_2);
+        h3_2.textContent = "Mega fed ny h3'er til article 2";
+
+        const tekst2 = document.querySelector("article:nth-child(2) p");
+        console.log(tekst2);
+        tekst2.textContent = "Mega <b>fed</b> længere tekst 2, hvor jeg har brugt textContent, så hele min tekst bliver opfattet som en tekststreng";
+
+        //jeg vil lave en ny artikel
+        let nyArticle = document.createElement("article");
+        //den article skal placeres, jeg placerer den i min section, så den skal jeg have fat i
+        // sectionen bliver nedenfor placeret i en variable
+        let hovedSection = document.querySelector("section");
+        //appendChild betyder, der bliver tilføjet et ekstra "barn", så jeg har nedenfor fat i min hovedSection og tilføjer så nyArticle
+        hovedSection.appendChild(nyArticle);
+        //tilføj indhold til min nyArticle --> en h3'er
+        let h3_3 = document.createElement("h3");
+        //igen skal der tilføjes indhold til denne h3'er - createTextNode er en tekststreng
+        let h3_3_tekst = document.createTextNode("Mega fed h3'er til article 3");
+        //igen skal skal h3_3_tekst placeres i h3_3 - ligesom at nyArticle skulle placeres i hovedSection
+        h3_3.appendChild(h3_3_tekst);
+        //og h3_3 skal placeres i nyArticle
+        nyArticle.appendChild(h3_3);
+
+        //ny tekst
+        let tekst3 = document.createElement("p");
+        //indholdet til den nye tekst
+        let tekst3_indhold = document.createTextNode("Mega fedt længere tekst, tilføjet med Javascript med createElement");
+        //tekst3_indhold skal placeres i tekst3
+        tekst3.appendChild(tekst3_indhold);
+        //tekst3 skal tilføjes i nyArticle
+        nyArticle.appendChild(tekst3);
+
+        //        let billede3 =  document.createElement ("p");
+        //        let billede3_indhold = document.createTextNode = ("img src=skyer.jpg");
+        //        billede3.appendChild(billede3_indhold);
+        //        nyArticle.appendChild(billede3);
+
+        let billede3 = document.createElement("p");
+
+        let billede3_indhold = document.createTextNode("img src=skyer.jpg, det her skulle være et billede, men jeg ved ikke, hvad jeg skal skrive istedet for createTextNode, for at hente mit billede ned");
+
+        billede3.appendChild(billede3_indhold);
+        nyArticle.appendChild(billede3);
+
+
+
+        nyArticle.innerHTML = "<img src=skyer.jpg>";
+
+
+        //        let billede3 =  document.createElement ("img");
+        //        billede3.src = "bjerg.jpg";
+        //        let src = document.getElementById("x");
+        //        src.appendChild(billede3);
+
+
+
+
+        let fuglBillede = document.querySelector("article:nth-child(1) img");
+        console.log(fuglBillede);
+
+        fuglBillede.addEventListener("click", clickBilledeFugl);
+
+        function clickBilledeFugl() {
+            console.log(clickBilledeFugl);
+
+            const tilfaeldigtTal = Math.round(Math.random() * 10);
+
+            const tilfaeldigtBillede = document.querySelector("article:nth-child(1) img").value;
+
+            //fuglBillede.removeEventListener("click", clickBilledeFugl);
+            fuglBillede.src = "https://placeimg.com/400/300/arch?t=" + tilfaeldigtTal;
+
+
+        }
+
+        const article = document.querySelector("article");
+        article.classList.add("boksshadow");
+
+
+
+        article.addEventListener("mouseover", overShadow);
+
+        function overShadow() {
+            console.log("se her");
+            article.classList.toggle("boksshadow");
+        }
+
+
+        article.addEventListener("mouseout", outShadow);
+
+        function outShadow() {
+            console.log("se her 2");
+            article.classList.toggle("boksshadow");
+
+
+        }
+
+
+
+
+
+        // let element = document.querySelector("#info");
+
+        // Almindelig funktionskald: element.addEventListener("click", doSomething);function doSomething() {// det der skal ske}
+
+        //anonym funktion: element.addEventListener("click", function() {// det der skal ske });
+
+        //Arrow-funktion:element.addEventListener("click", () =>{// det der skal ske });
+
+    </script>
+</body>
+
+</html>
