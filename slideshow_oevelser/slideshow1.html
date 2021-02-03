@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Tro på det...</h1>
+        <img src="img1.png" alt="">
+        <section>
+            <p>Billederne er brugt med tilladelse af Rasmus Bregnhøj</p>
+            <button id="videre">Videre</button>
+
+
+        </section>
+    </main>
+
+    <script>
+        let taeller = 0;
+
+        let image = document.querySelector("img");
+
+        console.log(image);
+
+
+        //opret array
+        let images = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+
+        const knap = document.querySelector("button");
+
+        knap.addEventListener("click", skiftBillede);
+
+        function skiftBillede() {
+            console.log("der er klikket");
+
+            if (taeller < 7 ) {
+                taeller++;
+                console.log(images[taeller]);
+                image.src = images[taeller];
+            } else {
+                taeller = 0;
+                 image.src = images[taeller];
+            }
+
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>
