@@ -1,0 +1,26 @@
+[
+    {
+        "fornavn": "Mette",
+        "efternavn": "Vester",
+        "mail": "mettev95@hotmail.com",
+        "retter": ["Burger", "Pizza", "Sushi"]
+    },
+
+    {
+        "fornavn": "Kim",
+        "efternavn": "Vester",
+        "mail": "kvester@hotmail.com",
+        "retter": ["And", "Store bøffer","Pizza" ]
+    },
+
+{
+        "fornavn": "Charlotte",
+        "efternavn": "Vester",
+        "mail": "cvester@live.dk",
+        "retter": ["Risengrød", "Kartoffelpizza", "Citronfromage"]
+    }
+
+
+
+
+]

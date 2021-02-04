@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json & array</title>
+    <style>
+        article {
+            background-color: blueviolet;
+           grid-gap: 2px;
+
+        }
+
+        h2, h3, p, ul {
+            padding-left: 15px;
+        }
+
+
+
+        .boks {
+            padding: 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="container"></section>
+    <template>
+        <article>
+           <div class="boks">
+            <h2 class="fornavn">NAVN</h2>
+            <h3 class="efternavn">EFTERNAVN</h3>
+            <p class="mail">MAIL</p>
+            <p>Livretter</p>
+            <ul class="retter"></ul>
+            </div>
+        </article>
+    </template>
+
+
+    <script>
+        const beholder = document.querySelector(".container");
+        const skabelon = document.querySelector("template");
+
+        const fil = "02_json_array.json";
+
+        async function hentdata() {
+            const respons = await fetch(fil);
+            const json = await respons.json();
+            vis(json);
+        }
+
+        function vis(json) {
+
+            json.forEach(person => {
+                const klon = skabelon.cloneNode(true).content;
+                klon.querySelector(".fornavn").textContent = person.fornavn;
+                klon.querySelector(".efternavn").textContent = person.efternavn;
+                klon.querySelector(".mail").textContent = person.mail;
+
+                person.retter.forEach(ret => {
+
+                    klon.querySelector(".retter").innerHTML += "<li>" + ret + "</li>";
+                })
+
+                beholder.appendChild(klon);
+
+            })
+
+
+        }
+        hentdata();
+    </script>
+</body></html>
