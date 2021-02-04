@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p id="en_tekst"></p>
+    <script>
+       // console.log(`Arealet er ${ udregnAreal(3,6)}`);
+
+
+        document.querySelector("#en_tekst").textContent = `Arealet er ${ udregnAreal(3,6)}`;
+
+        udregnAreal(3, 6)
+
+
+        function udregnAreal(x, y) {
+            let areal = x * y;
+            //console.log (areal);
+
+            return areal;
+        }
+
+    </script>
+</body>
+
+</html>
