@@ -12,16 +12,14 @@
 
     <article>
         <h1>Dyr i array</h1>
+        <section id="liste"></section>
     </article>
 
     <script>
         document.addEventListener("DOMContentLoaded", start);
 
-        function start() {
-            console.log("DOM er loadet");
-        }
-
-        let dyr = [{
+        let dyr = [
+            {
                 "navn": "frø",
                 "type": "amfibie",
                 "levested": "vandhuller",
@@ -55,11 +53,19 @@
                 "billede": "http://mabe-kea.dk/E19/pics/kroko.png"
             }
 
-
         ];
 
         console.log(dyr);
         console.log(dyr[3].navn);
+
+        function start() {
+            console.log("DOM er loadet");
+            const listeDyr = document.querySelector("#liste");
+            dyr.forEach(dyret => {
+                listeDyr.innerHTML += `<p>${dyret.navn}, ${dyret.type}  lever i  ${dyret.levested} `
+            }
+                       )
+        }
 
     </script>
 </body>
