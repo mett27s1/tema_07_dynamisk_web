@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+<article id="person">
+    <h3></h3>
+    <p>HEEEEEJ</p>
+    <p>HEEEEEJ</p>
+    <img src="" alt="">
+</article>
+
+
+
+
+    <script>
+        let person = {
+            "fornavn": "Mette",
+            "efternavn": "Vester",
+            "email": "mettev95@hotmail.com",
+            "billede": "selvportraet1.jpg"
+
+        }
+
+        //console.log(person.fornavn);
+
+
+       console.log(`fornavn: ${person.fornavn} ${person.efternavn}, email: ${person.email}`);
+
+        const placering = document.querySelector("#person");
+
+        const fuldeNavn = `Dette er mit fulde navn: ${person.fornavn} ${person.efternavn}`;
+
+        placering.querySelector("h3").textContent = fuldeNavn;
+        placering.querySelector("p").textContent =  `email: ${person.email}`;
+        placering.querySelector("img").src = person.billede;
+
+    </script>
+</body>
+
+</html>

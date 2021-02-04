@@ -145,6 +145,7 @@
 
         //jeg vil lave en ny artikel
         let nyArticle = document.createElement("article");
+
         //den article skal placeres, jeg placerer den i min section, så den skal jeg have fat i
         // sectionen bliver nedenfor placeret i en variable
         let hovedSection = document.querySelector("section");
@@ -194,9 +195,12 @@
 
 
         let fuglBillede = document.querySelector("article:nth-child(1) img");
+
+
         console.log(fuglBillede);
 
         fuglBillede.addEventListener("click", clickBilledeFugl);
+
 
         function clickBilledeFugl() {
             console.log(clickBilledeFugl);

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <article id="dyr_info">
+    <h1>Den berygtede gris</h1>
+    <p></p>
+    <p id="type">Type: </p>
+    <p id="levested">Levested: </p>
+     <img src="" alt="">
+    </article>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loadet");
+        }
+
+        let dyr = {
+            "dyr": "gris",
+            "navn": "Grisling",
+            "type": "pattedyr",
+            "billede": "pig.png",
+            "levested": "svinefarme"
+        }
+
+        console.log(`Hej`);
+        console.log(`Dyr: ${dyr.dyr}, navn: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
+
+        const placer = document.querySelector("#dyr_info");
+
+
+
+        placer.querySelector("p").textContent = `Dyr: ${dyr.dyr}, navn: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+        placer.querySelector("img").src = dyr.billede;
+
+        placer.querySelector("h1").textContent = "Uhh jeg ændret lige overskriften hvaa såååå";
+
+        placer.querySelector("#type").textContent += dyr.type;
+        placer.querySelector("#levested").textContent += dyr.levested;
+
+
+
+
+    </script>
+</body>
+
+</html>
