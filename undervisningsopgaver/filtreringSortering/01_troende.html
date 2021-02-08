@@ -74,6 +74,9 @@
             }
         };
 
+        let personer;
+        let filter = "ja";
+
         async function hentData() {
             const respons = await fetch(url, options);
             const json = await respons.json();
@@ -87,6 +90,7 @@
         function vis(json) {
             console.log(json);
             json.forEach(person => {
+                if (filter == person.troende) {
                 const klon = template.cloneNode(true);
                 klon.querySelector(".fornavn").textContent = person.fornavn;
                 klon.querySelector(".efternavn").textContent = person.efternavn;
@@ -98,6 +102,7 @@
 
 
                 main.appendChild(klon);
+                    }
             })
 
         }
