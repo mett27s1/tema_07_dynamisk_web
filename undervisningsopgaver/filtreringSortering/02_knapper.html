@@ -53,8 +53,8 @@
 <body>
    <h1>Persongalleri</h1>
     <nav>
-    <button data-troende="alle" >Alle</button>
-    <button data-troende="ja" class="valgt">Troende</button>
+    <button data-troende="alle" class="valgt" >Alle</button>
+    <button data-troende="ja" >Troende</button>
     <button data-troende="nej">Ikke troende</button>
     <button data-troende="tvivler">Tvivler</button>
     </nav>
@@ -89,7 +89,7 @@
         };
 
         let personer;
-        let filter = "ja";
+        let filter = "alle";
 
         async function hentData() {
             const respons = await fetch(url, options);
