@@ -9,7 +9,7 @@
             box-sizing: border-box;
             grid-gap: 10px;
             font-family: Helvetica;
-
+            margin: 0;
 
         }
 
@@ -24,53 +24,106 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 10px;
-            grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
              font-weight: 300;
+             padding-bottom: 200px;
 
         }
 
         body {
             background-color: antiquewhite;
+
         }
 
         article {
-            outline: 2px dashed blue;
-            padding: 10px;
-            background-color: darkorange;
 
+            padding: 10px;
+
+           color: aliceblue;
+             background-color: #c5cae2;
+
+
+        }
+
+        article:hover {
+            color: #c5cae2;
+             background-color: aliceblue;
         }
 
         h1 {
             text-align: center;
-             font-weight: 400;
+             font-weight: 200;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            color: #b0b4d1;
+
+
         }
         h2 {
+
+            padding-top: 8px;
             font-weight: 400;
         }
 
         nav {
             text-align: center;
+             padding-bottom: 20px;
         }
 
         .valgt {
-            background-color: #b0b4d1;
+            background-color: #c5cae2;
         }
 
         .pris {
-            font-size: 1vw;
+            padding-top: 20px;
+            font-size: 12px;
+        }
+
+        article p {
+            padding-top: 4px;
+
         }
 
         button {
             background-color: #f7bb7f;
+            border: 0;
+             padding: 10px 20px;
+            color: aliceblue;
+        }
+        button:hover {
+            background-color: white;
+            color: #c5cae2;
+        }
+
+        footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 60px;
+            background-color: #c5cae2;
+             color: aliceblue;
+
 
         }
+
+        .aabningstider {
+            text-align: right;
+        }
+
+
+        .aabningstider p,
+        .addresse p {
+            padding: 7px;
+            font-weight: 100;
+        }
+
+
     </style>
 </head>
 
 <body>
 
     <header>
-        <h1> RESTAURANT BABUSHKA</h1>
+        <h1> BISTRO BABUSHKA</h1>
         <nav>
             <button data-menu="alle" class="valgt">ALLE</button>
             <button data-menu="forretter">FORRETTER</button>
@@ -103,7 +156,7 @@
 
     </header>
     <script>
-        const header = document.querySelector("header h1");
+      const header = document.querySelector("h1");
         const medieurl = "https://babushka-dd8a.restdb.io/media/";
         const myHeaders = {
             "x-apikey": "600ec2fb1346a1524ff12de4"
@@ -167,4 +220,21 @@
             location.href = `02_detalje.html?id=${hvad._id}`;
         }
     </script>
-</body></html>
+
+</body>
+
+    <footer>
+
+       <div class="addresse">
+           <p>Addresse:</p>
+           <p>Grønnegade 97</p>
+           <p>1234 København K</p>
+       </div>
+       <div class="aabningstider">
+           <p>Åbningstider:</p>
+           <p>Mandag-fredag 10:30-22:00</p>
+           <p>Lørdag-søndag 12:00-23:00</p>
+       </div>
+
+
+    </footer></html>

@@ -16,7 +16,7 @@
         }
 
         img {
-          max-width: 100%;
+            max-width: 100%;
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -26,11 +26,10 @@
 
         main {
             display: grid;
-            grid-template-columns: 1fr ;
+            grid-template-columns: 1fr;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 10px;
-
+            padding: 100px;
             font-weight: 300;
 
         }
@@ -40,24 +39,22 @@
         }
 
         article {
-            outline: 2px dashed blue;
             padding: 10px;
-            background-color: darkorange;
 
+            color: aliceblue;
+            background-color: #c5cae2;
             margin-left: auto;
             margin-right: auto;
-             grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
 
 
         }
 
-        h1 {
-            text-align: center;
-            font-weight: 400;
-        }
+
 
         h2 {
             font-weight: 400;
+            font-size: 2.5vw;
         }
 
         nav {
@@ -70,21 +67,29 @@
 
 
         .pris {
-            font-size: 1.2vw;
+            padding-top: 20px;
+            font-size: 12px;
         }
 
         button {
             background-color: #f7bb7f;
-             float: right;
+            float: right;
+            border: 0;
+             padding: 10px 20px;
+            color: aliceblue;
 
+        }
+         button:hover {
+            background-color: white;
+            color: #c5cae2;
         }
 
 
 
-        .navn, .kortbeskrivelse {
+        .navn,
+        .kortbeskrivelse {
             font-weight: 700;
         }
-
     </style>
 </head>
 
@@ -106,7 +111,8 @@
                 <p class="pris"></p>
                 <p class="_id"></p>
 
-               <button>TILBAGE</button></div>
+                <button>TILBAGE</button>
+            </div>
 
         </article>
     </main>
@@ -148,8 +154,5 @@
             console.log("tilbageTilForside");
             history.back();
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
