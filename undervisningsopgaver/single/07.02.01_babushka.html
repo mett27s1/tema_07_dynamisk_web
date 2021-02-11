@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babushka</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            grid-gap: 10px;
+            font-family: Helvetica;
+            margin: 0;
+
+        }
+
+        img {
+            max-width: 100%;
+
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+             font-weight: 300;
+             padding-bottom: 200px;
+
+        }
+
+        body {
+            background-color: antiquewhite;
+
+        }
+
+        article {
+
+            padding: 10px;
+
+           color: aliceblue;
+             background-color: #c5cae2;
+
+
+        }
+
+        article:hover {
+            color: #c5cae2;
+             background-color: aliceblue;
+        }
+
+        h1 {
+            text-align: center;
+             font-weight: 200;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            color: #21213F;
+
+
+        }
+        h2 {
+
+            padding-top: 8px;
+            font-weight: 400;
+        }
+
+        nav {
+            text-align: center;
+             padding-bottom: 20px;
+        }
+
+        .valgt {
+            background-color: #c5cae2;
+        }
+
+        .pris {
+            padding-top: 20px;
+            font-size: 12px;
+        }
+
+        article p {
+            padding-top: 4px;
+
+        }
+
+        button {
+            background-color: #f7bb7f;
+            border: 0;
+             padding: 10px 20px;
+            color: aliceblue;
+        }
+        button:hover {
+            background-color: white;
+            color: #c5cae2;
+        }
+
+        footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 60px;
+            background-color: #c5cae2;
+             color: aliceblue;
+
+
+        }
+
+        .aabningstider {
+            text-align: right;
+        }
+
+
+        .aabningstider p,
+        .addresse p {
+            padding: 7px;
+            font-weight: 100;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <img src="splash.svg" alt="">
+
+    <header>
+        <h1> BISTRO BABUSHKA</h1>
+        <nav>
+            <button data-menu="alle" class="valgt">ALLE</button>
+            <button data-menu="forretter">FORRETTER</button>
+            <button data-menu="hovedretter">HOVEDRETTER</button>
+            <button data-menu="desserter">DESSERTER</button>
+            <button data-menu="sideorders">SIDEORDERS</button>
+            <button data-menu="drikkevarer">DRIKKEVARER</button>
+        </nav>
+
+        <main id="retter"></main>
+
+        <template>
+            <article class="bestemt_ret">
+                <div class="boks">
+                    <img src="" alt="" class="billede">
+                    <h2 class="navn"></h2>
+                    <p class="id"></p>
+                    <p class="kategori"></p>
+                    <p class="kortbeskrivelse"></p>
+                    <p class="langbeskrivelse"></p>
+                    <p class="oprindelsesregion"></p>
+                    <p class="pris"></p>
+                    <p class="_id"></p>
+
+
+                </div>
+            </article>
+        </template>
+
+
+    </header>
+    <script>
+      const header = document.querySelector("h1");
+        const medieurl = "https://babushka-dd8a.restdb.io/media/";
+        const myHeaders = {
+            "x-apikey": "600ec2fb1346a1524ff12de4"
+        }
+
+        document.addEventListener("DOMContentLoaded", start)
+        let retter;
+        let filtrer = "alle";
+
+        function start() {
+            console.log("start");
+            const filtrerKnapper = document.querySelectorAll("nav button");
+            filtrerKnapper.forEach(knap => knap.addEventListener("click", filtrerRetter))
+            loadJSON();
+        }
+
+        function filtrerRetter() {
+            console.log("filtrerRetter");
+            filtrer = this.dataset.menu;
+            document.querySelector(".valgt").classList.remove("valgt");
+            this.classList.add("valgt");
+            visRetter();
+            header.textContent = this.textContent;
+
+
+
+        }
+        async function loadJSON() {
+            console.log("loadJSON");
+            const JSONData = await fetch("https://babushka-dd8a.restdb.io/rest/menu", {
+                headers: myHeaders
+            });
+            retter = await JSONData.json();
+            console.log("Retter", retter);
+            visRetter();
+        }
+
+        function visRetter() {
+            console.log("visRetter");
+
+            const destination = document.querySelector("#retter");
+            const skabelon = document.querySelector("template").content;
+            destination.textContent = "";
+            retter.forEach(ret => {
+                console.log("menu", ret.kategori);
+
+                if (filtrer == ret.kategori || filtrer == "alle") {
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".billede").src = medieurl + ret.billede;
+                    klon.querySelector(".navn").textContent = ret.navn;
+                    klon.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
+                    klon.querySelector(".pris").textContent = "Pris " + ret.pris + " kr.";
+                    klon.querySelector(".bestemt_ret").addEventListener("click", () => visDetaljer(ret));
+                    destination.appendChild(klon); //SKAL STÅ TIL SIDST
+                }
+            })
+        }
+        function visDetaljer(hvad) {
+            console.log("visDetaljer");
+
+            location.href = `02_detalje.html?id=${hvad._id}`;
+        }
+    </script>
+
+</body>
+
+    <footer>
+
+       <div class="addresse">
+           <p>Addresse:</p>
+           <p>Grønnegade 97</p>
+           <p>1234 København K</p>
+       </div>
+       <div class="aabningstider">
+           <p>Åbningstider:</p>
+           <p>Mandag-fredag 10:30-22:00</p>
+           <p>Lørdag-søndag 12:00-23:00</p>
+       </div>
+
+
+    </footer></html>
